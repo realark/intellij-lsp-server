@@ -31,7 +31,7 @@ class HoverCommand(val position: Position) : DocumentCommand<Hover>, Disposable 
             if (element != null) {
                 try {
                     val lang = element.language
-                    val result = provider(lang)?.generateDoc(element, originalElement)?.trim() ?: ""
+                    val result = "Hi Ark: " + provider(lang)?.generateDoc(element, originalElement)?.trim() ?: ""
                     ref.set(MarkedString(lang.displayName.toLowerCase(), result))
                 } catch (ex: IndexNotReadyException) {
                 }
